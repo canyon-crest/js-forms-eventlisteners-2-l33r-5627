@@ -82,24 +82,26 @@ document.getElementById('btnCalc').addEventListener('click', () => {
     
 });
 
-const clearBtn = document.getElementById("clearBtn");
-clearBtn.addEventListener('click', function(){
-    document.getElementById('name').value = ""
-    document.getElementById('r3').checked = true;
-   const checkboxes = document.querySelectorAll("input[name='cb']");
-checkboxes.forEach(function(checkbox) {
-    checkbox.checked = false;
-}); // <-- FIXED: Added the missing ');' here
-
-document.getElementById('serviceSelect').value = "dinein"; // <-- FIXED: Changed 'service' to 'serviceSelect'
-document.getElementById('myPara').innerHTML = ""; // <-- FIXED: Changed 'output' to 'myPara' and '.value' to '.innerHTML'
-
-})
 // STEP 4: Get the "Clear" button by ID ("clearBtn")
-//         Add a click event listener.
-//         Inside the listener:
-//         a) Set the name input value to ""
-//         b) Set the Large radio (id "r3") to checked = true
-//         c) Uncheck ALL topping checkboxes (loop through them)
-//         d) Set the service dropdown value to "dinein"
-//         e) Set the output paragraph innerHTML to ""
+const clearBtn = document.getElementById("clearBtn");
+
+// Add a click event listener.
+clearBtn.addEventListener('click', function() {
+    // a) Set the name input value to ""
+    document.getElementById('name').value = "";
+    
+    // b) Set the Large radio (id "r3") to checked = true
+    document.getElementById('r3').checked = true;
+    
+    // c) Uncheck ALL topping checkboxes (loop through them)
+    const checkboxes = document.querySelectorAll("input[name='cb']");
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+    }); 
+
+    // d) Set the service dropdown value to "dinein"
+    document.getElementById('serviceSelect').value = "dinein"; 
+
+    // e) Set the output paragraph innerHTML to ""
+    document.getElementById('myPara').innerHTML = ""; 
+}); // <-- FIXED: Added missing closing syntax for addEventListener
