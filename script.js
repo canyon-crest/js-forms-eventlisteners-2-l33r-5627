@@ -18,7 +18,7 @@
 // STEP 1: Get the "Shout" button by its ID ("btnShout")
 //         using document.getElementById()
 document.getElementById('btnShout').addEventListener('click', function(){
-    outShout.innerHTML = shoutInput.value.toUpperCase() + "!";
+    outShout.innerHTML = shoutInput.value.toUpperCase()+"!";
 })
 // STEP 2: Add a click event listener to the button.
 //         Inside the listener function:
@@ -81,3 +81,25 @@ document.getElementById('btnCalc').addEventListener('click', () => {
     document.getElementById("myPara").innerHTML = textInputName + ", your total is $" + total.toFixed(2);
     
 });
+
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener('click', function(){
+    document.getElementById('name').value = ""
+    document.getElementById('r3').checked = true;
+   const checkboxes = document.querySelectorAll("input[name='cb']");
+checkboxes.forEach(function(checkbox) {
+    checkbox.checked = false;
+}); // <-- FIXED: Added the missing ');' here
+
+document.getElementById('serviceSelect').value = "dinein"; // <-- FIXED: Changed 'service' to 'serviceSelect'
+document.getElementById('myPara').innerHTML = ""; // <-- FIXED: Changed 'output' to 'myPara' and '.value' to '.innerHTML'
+
+})
+// STEP 4: Get the "Clear" button by ID ("clearBtn")
+//         Add a click event listener.
+//         Inside the listener:
+//         a) Set the name input value to ""
+//         b) Set the Large radio (id "r3") to checked = true
+//         c) Uncheck ALL topping checkboxes (loop through them)
+//         d) Set the service dropdown value to "dinein"
+//         e) Set the output paragraph innerHTML to ""
