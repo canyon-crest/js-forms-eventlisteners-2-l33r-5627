@@ -94,7 +94,7 @@ clearBtn.addEventListener('click', function() {
     document.getElementById('r3').checked = true;
     
     // c) Uncheck ALL topping checkboxes (loop through them)
-    const checkboxes = document.querySelectorAll("input[name='cb']");
+    const checkboxes = document.querySelectorAll("input[myInput='cb']");
     checkboxes.forEach(function(checkbox) {
         checkbox.checked = false;
     }); 
@@ -104,4 +104,4 @@ clearBtn.addEventListener('click', function() {
 
     // e) Set the output paragraph innerHTML to ""
     document.getElementById('myPara').innerHTML = ""; 
-}); // <-- FIXED: Added missing closing syntax for addEventListener
+}); 
