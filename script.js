@@ -88,7 +88,7 @@ const clearBtn = document.getElementById("clearBtn");
 // Add a click event listener.
 clearBtn.addEventListener('click', function() {
     // a) Set the name input value to ""
-    document.getElementById('name').value = "";
+    document.getElementById('myInput').value = "";
     
     // b) Set the Large radio (id "r3") to checked = true
     document.getElementById('r3').checked = true;
